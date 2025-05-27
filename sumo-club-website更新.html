@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>東伏見相撲クラブ - 社会人相撲と国際交流の場</title>
+    <style>
+        body {
+            font-family: "Noto Sans JP", "Hiragino Sans", "Meiryo", sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            border-bottom: 5px solid #D7003A;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            font-weight: 300;
+        }
+        
+        nav {
+            background-color: #f2f2f2;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #D7003A;
+        }
+        
+        .hero {
+            height: 400px;
+            background-image: url('/api/placeholder/1200/400');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            position: relative;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        
+        .hero-content {
+            z-index: 1;
+            text-align: center;
+            padding: 0 2rem;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        section {
+            margin-bottom: 4rem;
+        }
+        
+        h2 {
+            border-bottom: 3px solid #D7003A;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .text-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .image-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .image-content img {
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .experience-item {
+            background-color: white;
+            border-radius: 5px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .experience-item h3 {
+            margin-top: 0;
+            color: #D7003A;
+        }
+        
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        
+        .profile-image {
+            width: 250px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 1rem;
+        }
+        
+        button {
+            background-color: #D7003A;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #b00030;
+        }
+        
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .social-links {
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero {
+                height: 300px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>東伏見相撲クラブ</h1>
+            <p class="tagline">社会人相撲と相撲の国際交流会</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">クラブ紹介</a></li>
+            <li><a href="#experience">相撲体験</a></li>
+            <li><a href="#profile">代表者紹介</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+    </nav>
+    
+    <div class="hero">
+        <div class="hero-content">
+            <h2>日本の伝統文化を体験しよう</h2>
+            <p>東伏見相撲クラブでは、社会人の方も、外国人の方も、誰でも相撲を楽しめる環境を提供しています</p>
+        </div>
+    </div>
+    
+    <main>
+        <section id="about">
+            <h2>クラブ紹介</h2>
+            <div class="section-content">
+                <div class="text-content">
+                    <p>東伏見相撲クラブは、社会人が相撲を楽しむ場を提供するとともに、国際的な相撲の普及を目指して活動している団体です。</p>
+                    <p>当クラブでは、経験を問わず、相撲に興味のある方なら誰でも参加できます。週に1回の練習を行い、基本的な相撲の技術から本格的な稽古まで、一人ひとりのレベルに合わせた指導を行っています。</p>
+                    <p>また、外国人の方向けの相撲体験会も定期的に開催し、日本の伝統文化である相撲の魅力を世界に発信しています。</p>
+                </div>
+                <div class="image-content">
+                    <img src="/api/placeholder/600/400" alt="相撲クラブの活動風景">
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h2>相撲体験</h2>
+            <div class="experience-item">
+                <h3>社会人相撲教室</h3>
+                <p>忙しい社会人の方でも参加しやすいよう、週末に練習を行っています。経験者から初心者まで、レベルに合わせた指導を行います。</p>
+                <p><strong>開催日時:</strong> 毎週水曜日 土曜日 14:00-16:00</p>
+                <p><strong>場所:</strong> 早稲田大学 相撲場</p>
+                <p><strong>対象:</strong> 18歳以上の方</p>
+                <p><strong>料金:</strong> 月会費 8,000円（初回体験無料）</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>外国人向け相撲体験会</h3>
+                <p>日本の伝統文化である相撲を世界に広めるため、外国人の方向けの体験会を開催しています。英語での解説もあり、相撲の基本から歴史、文化的背景まで学べます。</p>
+                <p><strong>開催日時:</strong> 要相談</p>
+                <p><strong>場所:</strong> 早稲田大学 相撲場</p>
+                <p><strong>対象:</strong> 学校、国際交流の団体様）</p>
+                <p><strong>料金:</strong> 人数や内容によるため要相談</p>
+            </div>
+            
+            <div class="image-content">
+                <img src="/api/placeholder/800/400" alt="相撲体験会の様子">
+            </div>
+        </section>
+        
+        <section id="profile">
+            <h2>代表者紹介</h2>
+            <div class="profile">
+                <img src="/api/placeholder/250/350" alt="土屋和也代表" class="profile-image">
+                <div class="profile-content">
+                    <h3>代表 土屋和也</h3>
+                    <p>幼少期から相撲を始め、高校時代には全国大会に出場。大学で全国3位入賞。</p>
+                    <p>2025年より東伏見相撲クラブを立ち上げ、社会人が相撲を楽しめる環境づくりに尽力。外国人向けの相撲体験会も開始し、国際的な相撲の普及活動にも力を入れている。</p>
+                    <p>「相撲は単なるスポーツではなく、日本の伝統と文化が凝縮されたもの。その価値を多くの人に伝えていきたい」という思いで活動中。</p>
+                    <p><strong>資格・経歴</strong></p>
+                    <ul>
+                        <li>全日本相撲選手権 出場経験（2020）</li>
+                        <li>国スポ　相撲協議出場（2024）</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>お問い合わせ</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">お名前 *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">メールアドレス *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">電話番号</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="inquiry">お問い合わせ種別 *</label>
+                    <select id="inquiry" name="inquiry" required>
+                        <option value="">選択してください</option>
+                        <option value="社会人相撲教室">社会人相撲教室について</option>
+                        <option value="外国人向け体験会">外国人向け体験会について</option>
+                        <option value="見学">見学希望</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">お問い合わせ内容 *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit">送信する</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>東伏見相撲クラブ</p>
+            <p>〒202-0021 東京都西東京市東伏見3-4-66</p>
+            <p>TEL: 090-2773-0698</p>
+            <p>Email: info@sumo-experience.jp</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">YouTube</a>
+            </div>
+            <p>&copy; 2025 東伏見相撲クラブ All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Google Sheets用のスクリプト
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // ここにGoogleスプレッドシートに送信するコードを追加します
+            // 実際の実装では、Google Forms APIやGoogleスプレッドシートウェブアプリの連携が必要です
+            
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            // 送信確認のアラート（本番では適切なメッセージ表示に変更してください）
+            alert('お問い合わせを受け付けました。担当者より連絡させていただきます。');
+            this.reset();
+            
+            // ここに実際のGoogleスプレッドシート送信コードを追加
+            // Google Forms APIまたはGASを使用したWebアプリの実装が必要です
+        });
+    </script>
+</body>
+</html>
